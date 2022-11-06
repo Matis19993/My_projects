@@ -1,0 +1,15 @@
+<launch>
+
+	<include file="$(find rcprg_gazebo_utils)/launch/gazebo_client.launch" />
+
+	<include file="$(find rcprg_gazebo_utils)/launch/gazebo_publish_ros_tf_object.launch">
+		<arg name="link_name" value="jar_marker::link" />
+		<arg name="frame_id" value="jar" />
+	</include>
+
+	<include file="$(find rcprg_gazebo_utils)/launch/gazebo_publish_ros_tf_object.launch">
+		<arg name="link_name" value="cafe_table::link" />
+		<arg name="frame_id" value="table" />
+	</include>
+
+</launch>

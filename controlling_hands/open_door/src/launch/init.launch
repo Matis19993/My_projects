@@ -1,0 +1,9 @@
+<launch>
+
+	<node pkg="velma_common" name="cleaning" type="reset_shm_comm" />
+
+	<node pkg="velma_task_cs_ros_interface" name="initialization" type="initialize_robot.py" />
+
+	<node pkg="rviz" name="rviz" type="rviz" />
+
+</launch>

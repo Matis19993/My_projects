@@ -1,0 +1,10 @@
+<launch>
+
+	<include file="$(find rcprg_gazebo_utils)/launch/gazebo_client.launch" />
+
+	<include file="$(find rcprg_gazebo_utils)/launch/gazebo_publish_ros_tf_object.launch">
+		<arg name="link_name" value="cabinet_door_fragile::cabinet" />
+		<arg name="frame_id" value="board" />
+	</include>
+
+</launch>
