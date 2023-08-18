@@ -1,0 +1,118 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="01" author="md">
+        <createTable tableName="book">
+            <column name="id" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="author_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cover" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="float">
+                <constraints nullable="false"/>
+            </column>
+            <column name="publisher_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="author">
+            <column name="id" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createSequence sequenceName="hibernate_sequence" startValue="100"/>
+    </changeSet>
+
+    <changeSet id="02" author="md">
+        <insert tableName="author">
+            <column name="first_name" value="Marko"/>
+            <column name="last_name" value="Gargenta"/>
+        </insert>
+        <insert tableName="author">
+            <column name="first_name" value="Thomas"/>
+            <column name="last_name" value="Nield"/>
+        </insert>
+        <insert tableName="author">
+            <column name="first_name" value="Paul"/>
+            <column name="last_name" value="Dourish"/>
+        </insert>
+        <insert tableName="author">
+            <column name="first_name" value="Ian"/>
+            <column name="last_name" value="Goodfellow"/>
+        </insert>
+        <insert tableName="author">
+            <column name="first_name" value="Dawid"/>
+            <column name="last_name" value="Borycki"/>
+        </insert>
+        <insert tableName="author">
+            <column name="first_name" value="Gary"/>
+            <column name="last_name" value="McLean Hall"/>
+        </insert>
+        <insert tableName="book">
+            <column name="title" value="Learning Android"/>
+            <column name="author_id" value="1"/>
+            <column name="cover" value="http://akamaicovers.oreilly.com/images/0636920010883/cat.gif"/>
+            <column name="price" value="9.99"/>
+            <column name="publisher_id" value="1"/>
+        </insert>
+        <insert tableName="book">
+            <column name="title" value="Getting started with SQL"/>
+            <column name="author_id" value="2"/>
+            <column name="cover" value="http://akamaicovers.oreilly.com/images/0636920044994/cat.gif"/>
+            <column name="price" value="19.99"/>
+            <column name="publisher_id" value="1"/>
+        </insert>
+        <insert tableName="book">
+            <column name="title" value="The Stuff of bits"/>
+            <column name="author_id" value="3"/>
+            <column name="cover"
+                    value="https://mitpress.mit.edu/sites/default/files/styles/large_book_cover/http/mitp-content-server.mit.edu%3A18180/books/covers/cover/%3Fcollid%3Dbooks_covers_0%26isbn%3D9780262036207%26type%3D.jpg?itok=cbKAV9Z_"/>
+            <column name="price" value="5.99"/>
+            <column name="publisher_id" value="2"/>
+        </insert>
+        <insert tableName="book">
+            <column name="title" value="Deep Learning"/>
+            <column name="author_id" value="4"/>
+            <column name="cover"
+                    value="https://mitpress.mit.edu/sites/default/files/styles/large_book_cover/http/mitp-content-server.mit.edu%3A18180/books/covers/cover/%3Fcollid%3Dbooks_covers_0%26isbn%3D9780262035613%26type%3D.jpg?itok=opJUfdCT"/>
+            <column name="price" value="19.99"/>
+            <column name="publisher_id" value="2"/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title"
+                    value="Programming for the Internet of Things: Using Windows 10 IoT Core and Azure IoT Suite"/>
+            <column name="author_id" value="5"/>
+            <column name="cover"
+                    value="https://i5.walmartimages.com/asr/6c8411bf-5615-429c-b9ab-3ee8171bafc6_1.f9dd41ce5641a78c2ae3b0b7240f83d7.jpeg"/>
+            <column name="price" value="29.99"/>
+            <column name="publisher_id" value="3"/>
+        </insert>
+        <insert tableName="book">
+            <column name="title" value="Adaptive Code, Second Edition"/>
+            <column name="author_id" value="6"/>
+            <column name="cover"
+                    value="https://www.microsoftpressstore.com/ShowCover.aspx?isbn=9780735683204&amp;type=f"/>
+            <column name="price" value="2.99"/>
+            <column name="publisher_id" value="3"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

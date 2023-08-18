@@ -1,0 +1,38 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="01" author="md">
+        <createTable tableName="publisher">
+            <column name="id" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="logo" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createSequence sequenceName="hibernate_sequence" startValue="10"/>
+    </changeSet>
+    <changeSet id="02" author="md">
+        <insert tableName="publisher">
+            <column name="name" value="MIT Press"/>
+            <column name="logo"
+                    value="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/MIT_Press_logo_%28black%29.svg/800px-MIT_Press_logo_%28black%29.svg.png"/>
+        </insert>
+        <insert tableName="publisher">
+            <column name="name" value="O'Reilly"/>
+            <column name="logo" value="https://cdn.oreillystatic.com/oreilly/images/logo_guidelines_bg_gradient.png"/>
+        </insert>
+        <insert tableName="publisher">
+            <column name="name" value="Microsoft Press"/>
+            <column name="logo"
+                    value="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Microsoft_press.png/330px-Microsoft_press.png"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

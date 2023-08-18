@@ -1,0 +1,52 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="01" author="md">
+        <createTable tableName="rating">
+            <column name="id" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="rate" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="book_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createSequence sequenceName="hibernate_sequence" startValue="10"/>
+    </changeSet>
+    <changeSet id="02" author="md">
+        <insert tableName="rating">
+            <column name="rate" value="10"/>
+            <column name="description" value="Awesome!"/>
+            <column name="book_id" value="1"/>
+        </insert>
+        <insert tableName="rating">
+            <column name="rate" value="2"/>
+            <column name="description" value="Boring..."/>
+            <column name="book_id" value="1"/>
+        </insert>
+        <insert tableName="rating">
+            <column name="rate" value="6"/>
+            <column name="description" value="Pretty good"/>
+            <column name="book_id" value="2"/>
+        </insert>
+        <insert tableName="rating">
+            <column name="rate" value="9"/>
+            <column name="description" value="Very good lecture."/>
+            <column name="book_id" value="3"/>
+        </insert>
+        <insert tableName="rating">
+            <column name="rate" value="8"/>
+            <column name="description" value="Good but outdated."/>
+            <column name="book_id" value="3"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
