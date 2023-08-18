@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ms-publisher
+data:
+  application.properties: |-
+    log.prefix=k8s log prefix
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-publisher
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-publisher
+  template:
+    metadata:
+      labels:
+        app: ms-publisher
+    spec:
+      serviceAccountName: dev-account
+      containers:
+        - image: ms-publisher-k8s
+          name: ms-publisher
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8001
+
+status: { }
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-publisher
+  namespace: default
+spec:
+  ports:
+    - port: 8001
+      targetPort: 8001
+      name: "default-http"
+  selector:
+    app: ms-publisher
+  type: LoadBalancer
+
+
+---
