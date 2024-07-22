@@ -1,0 +1,11 @@
+Z głównych zadań ukończyłem wszystko.
+
+Z dodatkowych zrobiłem rzeczy następujące:
+- brak plików graficznych w końcowym projekcie,
+- CSS IS AWESOME w footerze - po najechaniu myszką ramka wykonuje animowany obrót,
+- wykorzystałem jednostki rem, em, vh, vw,
+- mobile first,
+- doklejane treści sortują się alfabetycznie,
+- w przypadku niemożliwości spełnienia warunku doklejenia wyświetla się alert,
+- button w footerze ("pokaż") wysuwa ramkę bez użycia JSa,
+- rezultat prac jest na netlify (https://frontend-test-ms.netlify.app/).
