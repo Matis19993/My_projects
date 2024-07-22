@@ -1,1 +1,1 @@
-Those are my projects done during studies at WUT. The most of them were implemented in Python but I also have basic knowledge in C, C++. I have more than one year commercial experience in programming in Java.
+Those are my projects done during studies at WUT. The most of them were implemented in Python but I also have basic knowledge in C, C++. I have more than one year commercial experience in programming in Java. I have also accomplished Spring Cloud course and developed demonstrative website.
